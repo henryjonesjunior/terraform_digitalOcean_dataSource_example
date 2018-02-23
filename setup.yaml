@@ -1,0 +1,23 @@
+#cloud-config
+users:
+  - name: buford_tannen
+    groups: sudo
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    shell: /bin/bash
+    home: /home/buford_tannen
+    lock_passwd: true
+    ssh-authorized-keys:
+      - ${PUBLIC_SSH_KEY}
+
+disable_root: true
+
+apt_update: true
+package_update: true
+
+packages:
+  - ntp
+
+runcmd:
+  - service ntp stop
+  - ntpd -gq
+  - service ntp start
