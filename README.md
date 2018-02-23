@@ -6,7 +6,7 @@ Using `cloud-config` we will:
     - add this user to the sudo group
     - assign a shell and home directory
     - load a public key for the user
-  - Update and package repository and upgrade the instance on first boot
+  - Update the package repository and upgrade the instance on first boot
   - Install the `ntp` package and start the ntp service
   - disable remote root login
   - disable password login
